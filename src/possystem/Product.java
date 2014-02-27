@@ -1,23 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package possystem;
 
 /**
  *
- * @author Pip
+ * @author Greg
  */
-public class Item {
+public class Product {
     
     private String UPC;
     private double itemPrice;
     private String itemDiscription;
     private DiscountStrategy discount;
 
-    public Item(String UPC, double itemPrice, String itemDiscription, DiscountStrategy discount) {
+    public Product(String UPC, double itemPrice, String itemDiscription, DiscountStrategy discount) {
         this.UPC = UPC;
         this.itemPrice = itemPrice;
         this.itemDiscription = itemDiscription;

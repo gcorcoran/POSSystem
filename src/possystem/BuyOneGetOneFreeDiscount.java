@@ -13,12 +13,11 @@ public class BuyOneGetOneFreeDiscount implements DiscountStrategy  {
     private double amountDiscount;
     private double totalDiscount;
 
-    public BuyOneGetOneFreeDiscount(double itemCost, double itemQuanity, double amountDiscount) {
+    public BuyOneGetOneFreeDiscount(double itemCost, double itemQuanity, double ignoredNumber) {
         this.itemCost = itemCost;
         this.itemQuanity = itemQuanity;
-        this.amountDiscount = amountDiscount;
         if(itemQuanity%2==0){
-            this.totalDiscount=(itemQuanity/2)*amountDiscount;
+            this.totalDiscount=(itemQuanity/2)*itemCost;
         } else if ((itemQuanity-1)%2==0){
             this.totalDiscount=((itemQuanity-1)/2)*amountDiscount;
         }
