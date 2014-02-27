@@ -13,12 +13,11 @@ package possystem;
 public class FlatDiscount implements DiscountStrategy{
     
     private double itemCost;
-    private double itemQuanity;
-    private double dollarDiscount;
+    private double itemQuanity=0;
+    private double dollarDiscount=2;
 
-    public FlatDiscount(double itemCost, double itemQuanity, double dollarDiscount) {
+    public FlatDiscount(double itemCost, double dollarDiscount) {
         this.itemCost = itemCost;
-        this.itemQuanity = itemQuanity;
         this.dollarDiscount = dollarDiscount;
     }
 

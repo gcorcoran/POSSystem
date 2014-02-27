@@ -13,12 +13,11 @@ package possystem;
 public class NoDiscount implements DiscountStrategy{
     
     private double itemCost;
-    private double itemQuanity;
+    private double itemQuanity=0;
     private final double discount = 0;
 
-    public NoDiscount(double itemCost, double itemQuanity, double dollarDiscount) {
+    public NoDiscount(double itemCost, double dollarDiscount) {
         this.itemCost = itemCost;
-        this.itemQuanity = itemQuanity;
     }
 
     @Override

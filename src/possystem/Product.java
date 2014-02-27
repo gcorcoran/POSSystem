@@ -19,14 +19,6 @@ public class Product {
         this.discount = discount;
     }
 
-    public DiscountStrategy getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(DiscountStrategy discount) {
-        this.discount = discount;
-    }
-    
     public String getUPC() {
         return UPC;
     }

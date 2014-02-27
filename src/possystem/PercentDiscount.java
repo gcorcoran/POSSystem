@@ -9,12 +9,11 @@ package possystem;
 public class PercentDiscount implements DiscountStrategy {
     
     private double itemCost;
-    private double itemQuanity;
-    private double percentDiscount;
+    private double itemQuanity=0;
+    private double percentDiscount=.1;
 
-    public PercentDiscount(double itemCost, double itemQuanity, double percentDiscount) {
+    public PercentDiscount(double itemCost, double percentDiscount) {
         this.itemCost = itemCost;
-        this.itemQuanity = itemQuanity;
         this.percentDiscount = percentDiscount;
     }
 
