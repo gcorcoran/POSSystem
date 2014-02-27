@@ -16,23 +16,23 @@ public class BuyOneGetOneFreeDiscount implements DiscountStrategy  {
     }
     
     @Override
-    public double getDiscountAmount(double itemQuanity, double itemCost){
-        if(itemQuanity%2==0){
-            this.totalDiscount=(itemQuanity/2)*itemCost;
-        } else if ((itemQuanity-1)%2==0){
-            this.totalDiscount=((itemQuanity-1)/2)*itemCost;
+    public double getDiscountAmount(double itemQuantity, double itemCost){
+        if(itemQuantity%2==0){
+            this.totalDiscount=(itemQuantity/2)*itemCost;
+        } else if ((itemQuantity-1)%2==0){
+            this.totalDiscount=((itemQuantity-1)/2)*itemCost;
         }
         return totalDiscount;
     }
     
     @Override
-    public double getTotalCost(double itemQuanity, double itemCost){
-        if(itemQuanity%2==0){
-            this.totalDiscount=(itemQuanity/2)*itemCost;
-        } else if ((itemQuanity-1)%2==0){
-            this.totalDiscount=((itemQuanity-1)/2)*itemCost;
+    public double getTotalCost(double itemQuantity, double itemCost){
+        if(itemQuantity%2==0){
+            this.totalDiscount=(itemQuantity/2)*itemCost;
+        } else if ((itemQuantity-1)%2==0){
+            this.totalDiscount=((itemQuantity-1)/2)*itemCost;
         }
-        return (itemQuanity*itemCost)-totalDiscount;
+        return (itemQuantity*itemCost)-totalDiscount;
     }
     
 }

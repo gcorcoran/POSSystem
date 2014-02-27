@@ -19,13 +19,13 @@ public class FlatDiscount implements DiscountStrategy{
     }
 
     @Override
-    public double getDiscountAmount(){
+    public double getDiscountAmount(double itemQuantity, double itemCost){
         return dollarDiscount;
     }
     
     @Override
-    public double getTotalCost(double itemCost, double itemQuanity){
-        return (itemCost * itemQuanity) -  dollarDiscount;
+    public double getTotalCost(double itemCost, double itemQuantity){
+        return (itemCost * itemQuantity) -  dollarDiscount;
     }
 
     

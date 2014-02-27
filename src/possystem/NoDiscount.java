@@ -13,20 +13,20 @@ package possystem;
 public class NoDiscount implements DiscountStrategy{
     
     private double itemCost;
-    private double itemQuanity=0;
+    private double itemQuantity=0;
     private final double discount = 0;
 
     public NoDiscount(double dollarDiscount) {
     }
 
     @Override
-    public double getDiscountAmount(){
+    public double getDiscountAmount(double itemQuantity, double itemCost){
         return 0;
     }
     
     @Override
-    public double getTotalCost(double itemCost,double itemQuanity){
-        return (itemCost * itemQuanity);
+    public double getTotalCost(double itemCost,double itemQuantity){
+        return (itemCost * itemQuantity);
     }
     
 }

@@ -15,13 +15,13 @@ public class PercentDiscount implements DiscountStrategy {
     }
     
     @Override
-    public double getDiscountAmount(double itemCost, double itemQuanity){
-        return itemCost * itemQuanity * percentDiscount;
+    public double getDiscountAmount(double itemCost, double itemQuantity){
+        return itemCost * itemQuantity * percentDiscount;
     }
     
     @Override
-    public double getTotalCost(double itemCost, double itemQuanity){
-        return (itemCost * itemQuanity) - (itemCost * itemQuanity * percentDiscount);
+    public double getTotalCost(double itemCost, double itemQuantity){
+        return (itemCost * itemQuantity) - (itemCost * itemQuantity * percentDiscount);
     }
     
     public double getPercentDiscount() {
