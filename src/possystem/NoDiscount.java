@@ -16,8 +16,7 @@ public class NoDiscount implements DiscountStrategy{
     private double itemQuanity=0;
     private final double discount = 0;
 
-    public NoDiscount(double itemCost, double dollarDiscount) {
-        this.itemCost = itemCost;
+    public NoDiscount(double dollarDiscount) {
     }
 
     @Override
@@ -26,28 +25,8 @@ public class NoDiscount implements DiscountStrategy{
     }
     
     @Override
-    public double getTotalCost(){
+    public double getTotalCost(double itemCost,double itemQuanity){
         return (itemCost * itemQuanity);
-    }
-    
-    @Override
-    public double getItemCost() {
-        return itemCost;
-    }
-
-    @Override
-    public void setItemCost(double itemCost) {
-        this.itemCost = itemCost;
-    }
-
-    @Override
-    public double getItemQuanity() {
-        return itemQuanity;
-    }
-
-    @Override
-    public void setItemQuanity(double itemQuanity) {
-        this.itemQuanity = itemQuanity;
     }
     
 }

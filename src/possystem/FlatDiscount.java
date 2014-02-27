@@ -11,23 +11,12 @@ package possystem;
  * @author Greg
  */
 public class FlatDiscount implements DiscountStrategy{
-    
-    private double itemCost;
-    private double itemQuanity=0;
+
     private double dollarDiscount=2;
 
-    public FlatDiscount(double itemCost, double dollarDiscount) {
-        this.itemCost = itemCost;
+    public FlatDiscount(double dollarDiscount) {
         this.dollarDiscount = dollarDiscount;
     }
-    
-    public FlatDiscount(double itemCost,double itemQuanity, double dollarDiscount) {
-        this.itemCost = itemCost;
-        this.itemQuanity = itemQuanity;
-        this.dollarDiscount = dollarDiscount;
-        
-    }
-    
 
     @Override
     public double getDiscountAmount(){
@@ -35,28 +24,9 @@ public class FlatDiscount implements DiscountStrategy{
     }
     
     @Override
-    public double getTotalCost(){
+    public double getTotalCost(double itemCost, double itemQuanity){
         return (itemCost * itemQuanity) -  dollarDiscount;
     }
-    
-    @Override
-    public double getItemCost() {
-        return itemCost;
-    }
 
-    @Override
-    public void setItemCost(double itemCost) {
-        this.itemCost = itemCost;
-    }
-
-    @Override
-    public double getItemQuanity() {
-        return itemQuanity;
-    }
-
-    @Override
-    public void setItemQuanity(double itemQuanity) {
-        this.itemQuanity = itemQuanity;
-    }
     
 }

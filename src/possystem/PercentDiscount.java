@@ -8,53 +8,21 @@ package possystem;
  */
 public class PercentDiscount implements DiscountStrategy {
     
-    private double itemCost;
-    private double itemQuanity=0;
     private double percentDiscount=.1;
 
-    public PercentDiscount(double itemCost, double percentDiscount) {
-        this.itemCost = itemCost;
+    public PercentDiscount(double percentDiscount) {
         this.percentDiscount = percentDiscount;
     }
     
-    public PercentDiscount(double itemCost, double itemQuanity, double percentDiscount) {
-        this.itemCost = itemCost;
-        this.itemQuanity = itemQuanity;
-        this.percentDiscount = percentDiscount;
-        
-    }
-    
-
     @Override
-    public double getDiscountAmount(){
+    public double getDiscountAmount(double itemCost, double itemQuanity){
         return itemCost * itemQuanity * percentDiscount;
     }
     
     @Override
-    public double getTotalCost(){
+    public double getTotalCost(double itemCost, double itemQuanity){
         return (itemCost * itemQuanity) - (itemCost * itemQuanity * percentDiscount);
     }
-    
-    @Override
-    public double getItemCost() {
-        return itemCost;
-    }
-
-    @Override
-    public void setItemCost(double itemCost) {
-        this.itemCost = itemCost;
-    }
-
-    @Override
-    public double getItemQuanity() {
-        return itemQuanity;
-    }
-
-    @Override
-    public void setItemQuanity(double itemQuanity) {
-        this.itemQuanity = itemQuanity;
-    }
-
     
     public double getPercentDiscount() {
         return percentDiscount;
@@ -63,7 +31,7 @@ public class PercentDiscount implements DiscountStrategy {
     public void setPercentDiscount(double percentDiscount) {
         this.percentDiscount = percentDiscount;
     }
-    
-    
+
+   
     
 }

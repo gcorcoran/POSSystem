@@ -18,6 +18,14 @@ public class Product {
         this.itemDiscription = itemDiscription;
         this.discount = discount;
     }
+    
+    public double getDiscountAmount(){
+        return discount.getDiscountAmount();
+    }
+    
+    public double getTotalCost(double itemQuanity){
+        return discount.getTotalCost(itemPrice,itemQuanity);
+    }    
 
     public String getUPC() {
         return UPC;

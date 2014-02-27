@@ -10,14 +10,8 @@ public interface DiscountStrategy {
 
     double getDiscountAmount();
 
-    double getItemCost();
+    double getTotalCost(double itemCost, double itemQuanity);
+    
 
-    double getItemQuanity();
-
-    double getTotalCost();
-
-    void setItemCost(double itemCost);
-
-    void setItemQuanity(double itemQuanity);
     
 }
