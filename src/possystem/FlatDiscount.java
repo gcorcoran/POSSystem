@@ -20,6 +20,14 @@ public class FlatDiscount implements DiscountStrategy{
         this.itemCost = itemCost;
         this.dollarDiscount = dollarDiscount;
     }
+    
+    public FlatDiscount(double itemCost,double itemQuanity, double dollarDiscount) {
+        this.itemCost = itemCost;
+        this.itemQuanity = itemQuanity;
+        this.dollarDiscount = dollarDiscount;
+        
+    }
+    
 
     @Override
     public double getDiscountAmount(){

@@ -16,6 +16,14 @@ public class PercentDiscount implements DiscountStrategy {
         this.itemCost = itemCost;
         this.percentDiscount = percentDiscount;
     }
+    
+    public PercentDiscount(double itemCost, double itemQuanity, double percentDiscount) {
+        this.itemCost = itemCost;
+        this.itemQuanity = itemQuanity;
+        this.percentDiscount = percentDiscount;
+        
+    }
+    
 
     @Override
     public double getDiscountAmount(){
