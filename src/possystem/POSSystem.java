@@ -15,7 +15,8 @@ public class POSSystem {
 //        System.out.println("The discount should be 2: " + flat.getDiscountAmount());
 //        System.out.println("The total should be 8: " + flat.getTotalCost());
         
-        
+        Scanner tester = new Scanner();
+        tester.getProductData("A100");
     }
     
     
