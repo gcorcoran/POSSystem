@@ -12,17 +12,13 @@ package possystem;
  */
 public class lineItem {
     
-    private double quanity;
-    private String UPC;
-    private double itemPrice;
-    private String itemDiscription;
+    private Product product;
     private DiscountStrategy discount;
+    private double quanity;
 
     public lineItem(double quanity,Product product, DiscountStrategy discount) {
         this.quanity = quanity;
-        this.UPC = product.getUPC();
-        this.itemPrice = product.getItemPrice();
-        this.itemDiscription = product.getItemDiscription();
+        this.product = product;
         this.discount = discount;
         discount.setItemQuanity(quanity);
     }
