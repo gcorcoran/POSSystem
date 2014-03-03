@@ -32,13 +32,17 @@ public class FakeDB implements DataStorageStrategy{
 
 
 
+    @Override
     public String getUPC(int a) {
         return items[a].getUPC();
     }
-    
+
+    @Override
     public Product getProductInfo(int a) {
-        return items[a];
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
     
     }
     
