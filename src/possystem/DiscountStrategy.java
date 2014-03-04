@@ -8,9 +8,9 @@ package possystem;
  */
 public interface DiscountStrategy {
 
-    double getDiscountAmount(double itemQuantity, double itemCost);
+    public abstract double getDiscountAmount(double itemQuantity, double itemCost);
 
-    double getTotalCost(double itemCost, double itemQuantity);
+    public abstract double getTotalCost(double itemCost, double itemQuantity);
     
 
     
