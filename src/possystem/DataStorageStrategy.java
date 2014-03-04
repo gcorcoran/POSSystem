@@ -12,6 +12,6 @@ package possystem;
  */
 public interface DataStorageStrategy {
     
-    public Product getProductInfo(String upc);
+    public abstract Product getProductInfo(String upc);
     
 }
