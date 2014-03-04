@@ -13,11 +13,12 @@ package possystem;
 public class Receipt {
     
     private Customer customer;
-    private DataStorageStrategy db;
+    private DataStorageStrategy database;
     private LineItem lineItems[];
 
-    public Receipt(Customer customer) {
+    public Receipt(Customer customer, DataStorageStrategy db) {
         this.customer = customer;
+        this.database = db;
     }
 
     public Customer getCustomer() {
