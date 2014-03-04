@@ -13,12 +13,18 @@ package possystem;
 public class LineItem {
 
     private Product product;
-
+    private DataStorageStrategy db;
     private double quantity;
 
-    public LineItem(Product product, double quantity) {
+    public LineItem() {
+    }
+
+    
+    
+    public LineItem(Product product, double quantity, DataStorageStrategy db) {
         this.product = product;
         this.quantity = quantity;
+        this.db = db;
     }
 
     public Product getProduct() {
