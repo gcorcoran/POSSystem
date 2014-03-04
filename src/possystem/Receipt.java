@@ -36,8 +36,8 @@ public class Receipt {
     }
     
     public void scanItem(String upc, double quantity) {
-        Product product = null;
-        product = this.getProductInfo(upc);
+        
+        Product product = new Product(this.getProductInfo(upc));
     }
     
     

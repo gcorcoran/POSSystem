@@ -18,6 +18,15 @@ public class Product {
         this.itemDiscription = itemDiscription;
         this.discount = discount;
     }
+
+    public Product(Product product) {
+        this.UPC = product.getUPC();
+        this.itemPrice = product.getItemPrice();
+        this.itemDiscription = product.getItemDiscription();
+        this.discount = product.getDiscount();
+    }
+    
+    
     
     public double getDiscountAmount(double quantity){
         return discount.getDiscountAmount(quantity, itemPrice);
@@ -49,6 +58,14 @@ public class Product {
 
     public void setItemDiscription(String itemDiscription) {
         this.itemDiscription = itemDiscription;
+    }
+
+    public void setDiscount(DiscountStrategy discount) {
+        this.discount = discount;
+    }
+
+    public DiscountStrategy getDiscount() {
+        return discount;
     }
     
     
