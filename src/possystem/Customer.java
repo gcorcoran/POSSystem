@@ -8,10 +8,14 @@ package possystem;
 
 /**
  *
- * @author gcorcoran
+ * @author Pip
  */
-public interface DataStorageStrategy {
+public class Customer {
     
-    public Product getProductInfo(String upc);
+    String name;
+
+    public Customer(String name) {
+        this.name = name;
+    }
     
 }

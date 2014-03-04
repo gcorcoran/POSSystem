@@ -32,18 +32,27 @@ public class FakeDB implements DataStorageStrategy{
 
 
 
-    @Override
-    public String getUPC(int a) {
-        return items[a].getUPC();
+    
+     @Override
+        public Product getProductInfo(String upc) {
+        // validation is needed for method parameter
+        if(upc == null || upc.length() == 0) {
+            System.out.println("Sorry, FakeDB.getProductInfo method has "
+                    + "illegal argument");
+            return null;  // end method prematurely after log to console
+        }
+        
+        Product product = null;
+        for(Product p : items) {
+            if(upc.equals(p.getUPC())) {
+                product = p;
+                break;
+            }
+        }
+        
+        return product;
     }
 
-    @Override
-    public Product getProductInfo(int a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
     }
     
      

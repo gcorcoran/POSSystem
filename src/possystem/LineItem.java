@@ -39,7 +39,7 @@ public class LineItem {
 
     @Override
     public String toString() {
-        return this.product.getUPC() + " " + this.product.getItemDiscription() + " " + this.product.getItemPrice() + " " + this.getQuantity() + " " + this.product.getDiscountAmount(quantity) + ((this.product.getItemPrice()*this.getQuantity())-this.product.getDiscountAmount(quantity));
+        return this.product.getUPC() + " " + this.product.getItemDiscription() + " " + this.product.getItemPrice() + " " + this.getQuantity() + " " + this.product.getDiscountAmount(quantity) + " " +((this.product.getItemPrice()*this.getQuantity())-this.product.getDiscountAmount(quantity));
     }
     
     
