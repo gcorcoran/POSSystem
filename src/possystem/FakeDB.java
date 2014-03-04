@@ -35,7 +35,7 @@ public class FakeDB implements DataStorageStrategy{
     
      @Override
         public Product getProductInfo(String upc) {
-        // validation is needed for method parameter
+        // validation is needed for method parameter, code looked up from elsewhere
         if(upc == null || upc.length() == 0) {
             System.out.println("Sorry, FakeDB.getProductInfo method has "
                     + "illegal argument");
