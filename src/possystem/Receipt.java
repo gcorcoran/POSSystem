@@ -8,7 +8,7 @@ package possystem;
 
 /**
  *
- * @author Pip
+ * @author Greg
  */
 public class Receipt {
     
