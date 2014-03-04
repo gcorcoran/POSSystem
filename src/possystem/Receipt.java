@@ -12,9 +12,9 @@ package possystem;
  */
 public class Receipt {
     
-    Customer customer;
-    DataStorageStrategy db;
-    LineItem lineItems[];
+    private Customer customer;
+    private DataStorageStrategy db;
+    private LineItem lineItems[];
 
     public Receipt(Customer customer) {
         this.customer = customer;
