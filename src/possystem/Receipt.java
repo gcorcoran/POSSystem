@@ -13,7 +13,8 @@ package possystem;
 public class Receipt {
     
     Customer customer;
-    LineItem lineitems[];
+    DataStorageStrategy db;
+    LineItem lineItems[];
 
     public Receipt(Customer customer) {
         this.customer = customer;
@@ -28,16 +29,19 @@ public class Receipt {
     }
 
     public LineItem[] getLineitems() {
-        return lineitems;
+        return lineItems;
     }
 
     public void setLineitems(LineItem[] lineitems) {
-        this.lineitems = lineitems;
+        this.lineItems = lineitems;
     }
     
     public void scanItem(String upc, double quantity) {
+        LineItem temp[]= new LineItem[lineItems.length+1];
+        for (LineItem lineItem : lineItems) {
+            
+        }
         
-        Product product = new Product(this.getProductInfo(upc));
     }
     
     
