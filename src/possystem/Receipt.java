@@ -13,20 +13,20 @@ package possystem;
 public class Receipt {
     
     private Customer customer;
-    private DataStorageStrategy database;
+    private DataStorageStrategy db;
     private LineItem[] lineItems;
 
     public DataStorageStrategy getDatabase() {
-        return database;
+        return db;
     }
 
     public void setDatabase(DataStorageStrategy database) {
-        this.database = database;
+        this.db = database;
     }
 
     public Receipt(Customer customer, DataStorageStrategy db) {
         this.customer = customer;
-        this.database = db;
+        this.db = db;
     }
 
     public Customer getCustomer() {
@@ -59,13 +59,18 @@ public class Receipt {
 //        lineItems = tempItems;
 //    }
     
-    public final void addLineItem(final String prodId, final int qty) {
+    public final void addLineItem(String prodId, int qty) {
         // needs validation
-        LineItem item = new LineItem(this.database.getProductInfo(prodId), qty);
+        
+        LineItem item = new LineItem(db.getProductInfo(prodId), qty);
+        //added to test if this is being passed correctly to addToArray method
+        System.out.println(item.toString());
+        
         addToArray(item);
     }
     
-    private void addToArray(final LineItem item) {
+    //private void addToArray(final LineItem item) {
+        private void addToArray(LineItem item) {
         // needs validation
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);

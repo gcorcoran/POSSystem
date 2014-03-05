@@ -19,7 +19,10 @@ public class LineItem {
     public LineItem() {
     }
 
-    
+    public LineItem(Product product, double quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
     
     public LineItem(Product product, double quantity, DataStorageStrategy db) {
         this.product = product;
