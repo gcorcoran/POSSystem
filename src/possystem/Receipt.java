@@ -83,12 +83,27 @@ public class Receipt {
     
     public String printreceipt(){
         
+        System.out.println(this.receiptMessages.getGreeting() + this.customer.getName() + "! "  + this.receiptMessages.getReceiptStartMsg());
+        System.out.println(this.receiptMessages.getReceiptColHeader());
+        
+        double total=0;
+        
         for(int i=0;i<lineItems.length;i++){ 
-                //return lineItems.toString();
-            return lineItems[i].toString();
-            
+             
+             System.out.println(lineItems[i].toString()); 
         }
-            return "Thank you for shopping at Kohls!";
+        //loop to add total
+        for(int i=0;i<lineItems.length;i++){ 
+            Product temp = new Product(lineItems[i].getProduct());
+             total+=((temp.getItemPrice()*lineItems[i].getQuantity())-temp.getDiscountAmount(lineItems[i].getQuantity()));
+             //total+=temp.getItemPrice()
+             
+        }
+        
+        System.out.println(this.receiptMessages.getTotalDue()+total);
+        
+        System.out.println(this.receiptMessages.getReceiptEndMsg());
+        return "";
     }
     
 }

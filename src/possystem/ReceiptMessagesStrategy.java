@@ -16,5 +16,9 @@ public interface ReceiptMessagesStrategy {
     
     public abstract String getReceiptEndMsg();
     
+    public abstract String getReceiptColHeader();
     
+    public abstract String getTotalDue();
+    
+    public abstract String getGreeting();
 }
