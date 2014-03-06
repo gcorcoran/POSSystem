@@ -6,6 +6,8 @@
 
 package possystem;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Greg
@@ -16,6 +18,7 @@ public class Receipt {
     private DataStorageStrategy db;
     private LineItem[] lineItems;
     private ReceiptMessagesStrategy receiptMessages;
+    //DecimalFormat myFormatter = new DecimalFormat("###,###.##");
 
     public ReceiptMessagesStrategy getReceiptMessages() {
         return receiptMessages;
@@ -99,8 +102,9 @@ public class Receipt {
              //total+=temp.getItemPrice()
              
         }
+        DecimalFormat myFormatter = new DecimalFormat("###.##");
         
-        System.out.println(this.receiptMessages.getTotalDue()+total);
+        System.out.println(this.receiptMessages.getTotalDue()+myFormatter.format(total));
         
         System.out.println(this.receiptMessages.getReceiptEndMsg());
         return "";

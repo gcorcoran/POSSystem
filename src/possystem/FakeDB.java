@@ -12,7 +12,7 @@ package possystem;
  */
 public class FakeDB implements DataStorageStrategy{
     
-     Product items[] = {new Product("A100",10,"Kitten",new FlatDiscount(2)),
+     Product items[] = {new Product("A100",10,"Kitten",new FlatDiscount(2.111)),
                         new Product("A101",15,"Dog   ",new NoDiscount(3)),
                         new Product("A102",20,"Ferret",new BuyOneGetOneFreeDiscount(4)),
                         new Product("A103",25,"Wombat",new PercentDiscount(5)),
