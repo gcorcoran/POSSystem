@@ -72,6 +72,9 @@ public class Receipt {
     //private void addToArray(final LineItem item) {
         private void addToArray(LineItem item) {
         // needs validation
+            if(lineItems==null){
+                lineItems=new LineItem[0];
+            }
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = item;
