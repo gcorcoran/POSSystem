@@ -12,14 +12,15 @@ public class POSSystem {
         
         Customer name = new Customer("Joe");
         DataStorageStrategy db = new FakeDB();
-        Receipt tester = new Receipt(name, db);
+        ReceiptMessagesStrategy messages= new KohlsReceiptMessages();
+        Receipt tester = new Receipt(name, db, messages);
         
-//        tester.addItem("A100", 2);
-//        tester.addItem("A101", 2);
+        tester.addLineItem("A100", 2);
         tester.addLineItem("A101", 2);
+        tester.addLineItem("A102", 2);
         
-        System.out.println(tester.printreceipt());
-        
+        System.out.print(tester.printreceipt());
+        //tester.printreceipt();
     }
     
     

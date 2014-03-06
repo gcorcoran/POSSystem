@@ -15,6 +15,15 @@ public class Receipt {
     private Customer customer;
     private DataStorageStrategy db;
     private LineItem[] lineItems;
+    private ReceiptMessagesStrategy receiptMessages;
+
+    public ReceiptMessagesStrategy getReceiptMessages() {
+        return receiptMessages;
+    }
+
+    public void setReceiptMessages(ReceiptMessagesStrategy receiptMessages) {
+        this.receiptMessages = receiptMessages;
+    }
 
     public DataStorageStrategy getDatabase() {
         return db;
@@ -24,9 +33,10 @@ public class Receipt {
         this.db = database;
     }
 
-    public Receipt(Customer customer, DataStorageStrategy db) {
+    public Receipt(Customer customer, DataStorageStrategy db, ReceiptMessagesStrategy msgs) {
         this.customer = customer;
         this.db = db;
+        this.receiptMessages = msgs;
     }
 
     public Customer getCustomer() {
@@ -45,26 +55,13 @@ public class Receipt {
         this.lineItems = lineitems;
     }
     
-//    public void addItem(String upc, double quantity) {
-//        LineItem newestLineItem = new LineItem(this.database.getProductInfo(upc),quantity);
-//        this.addToArray(newestLineItem);
-//        
-//    }
-//    
-//    private void addToArray(LineItem newestLineItem) {
-//        // needs validation
-//        LineItem[] tempItems = new LineItem[lineItems.length + 1];
-//        System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
-//        tempItems[lineItems.length] = newestLineItem;
-//        lineItems = tempItems;
-//    }
+
     
     public final void addLineItem(String prodId, int qty) {
-        // needs validation
         
         LineItem item = new LineItem(db.getProductInfo(prodId), qty);
         //added to test if this is being passed correctly to addToArray method
-        System.out.println(item.toString());
+        //System.out.println(item.toString());
         
         addToArray(item);
     }
@@ -86,8 +83,10 @@ public class Receipt {
     
     public String printreceipt(){
         
-        for (LineItem lineItem : lineItems) {
-            return lineItem.toString();
+        for(int i=0;i<lineItems.length;i++){ 
+                //return lineItems.toString();
+            return lineItems[i].toString();
+            
         }
             return "Thank you for shopping at Kohls!";
     }
